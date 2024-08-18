@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+// Question 1
+var currentDate = new Date();
+document.write(currentDate);
+
+// Question 2
+var monthNames = ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"];
+var now = new Date();
+var theMonth = now.getMonth();
+var nameOfMonth = monthNames[theMonth];
+document.write("<br>"+"Current Month:"+nameOfMonth)
+
+// Question 3
+var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var now = new Date();
+var theDay = now.getDay();
+var nameOfToday = dayNames[theDay];
+document.write("<br>Today is "+nameOfToday)
+
+// Question 4
+var DayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+     var Today = new Date();
+     var Day = Today.getDay();
+     var nameofDay = DayNames[Day];
+     if(nameofDay=="Saturday" || nameofDay=="Sunday"){
+         alert("It's a Fun day");
+     }
+     else{
+      alert("Week Days")
+     }
+
+// Question 5
+var d=new Date();
+var date=d.getDate();
+if( date<=15){
+alert("First Fifteen days of month")
+}
+if( date>15){
+    alert("Last Days of month")
+}
+
+// Question 6
+var time=d.getTime();
+document.write("<br>Eclapsed Milliseconds since January 1, 1970:"+time)
+var newVariable = Math.floor((new Date() - new Date(0)) / (1000 * 60));
+document.write("<br>Minutes since midnight, January 1, 1970:", newVariable);
+
+// Question 7
+var currentDate = new Date();
+var currentHour = currentDate.getHours();
+if (currentHour < 12) {
+    alert("It's AM");
+} else {
+    alert("It's PM");
+}
+
+// Question 8
+var laterDate = new Date(2020, 11, 31); 
+document.write("<br> Later date:", laterDate);
+
+// Question 9
+var currentdate=new Date(2024 , 3, 12)
+var difference=d-currentdate;
+var daysPassed = Math.floor(difference / (1000 * 60 * 60 * 24));
+alert(daysPassed+" days have passed since 1 Ramadan 2024");
+
+// Question 10
+var startDate=new Date(2024,1,1);
+var randomDate=new Date();
+var randomDiff=randomDate-startDate;
+var seconds=Math.floor(randomDiff/1000);
+document.write("<br>On reference date:"+randomDate)
+document.write("<br>"+seconds+" seconds had passed since the beginning of 2024");
+
+// Question 11
+document.write("<h2>Hour ago</h2>");
+var currDate = new Date();
+document.write("<br>"+currDate);
+var currentHours = currDate.getHours();
+currDate.setHours(currentHours - 1);
+document.write("<br>1 hour ago it was "+currDate);
+
+// Question 12
+document.write("<h2>Date Reset to 100 Years Back</h2>");
+var datereset = new Date();
+document.write("<br>current date:"+datereset);
+datereset.setFullYear(datereset.getFullYear() - 100);
+document.write("<br>100 years back it was "+datereset);
+
+// Question 13
+var age = prompt("Please enter your age:");
+     if (age !== null && !isNaN(age)) {
+     var currentYear = new Date().getFullYear();
+    var birthYear = currentYear - age;
+    document.write("<br>Your age is:"+age);
+    document.write("<br>your birth year:"+birthYear)
+            }
+            
+// Question 14
+document.write("<h2>K-Electric Bill</h2>");
+var chargeperunit=16;
+var totalunit=prompt("Enter your total units ");
+document.write("<br>Customer Name:"+"<b>ABC Customer</b>");
+document.write("<br>Current Month:"+"<b>"+nameOfMonth+"</b>");
+document.write("<br>Number of units:"+"<b>"+totalunit+"</b>");
+document.write("<br>Charges per unit:<b>"+chargeperunit+"</b>");
+var totalBill=totalunit*chargeperunit;
+var roundoff=totalBill.toFixed(2);
+document.write("<br><br>Net Amount Payable(within Due Date):"+"<b>"+roundoff+"</b>");
+document.write("<br>Late Payment Surcharges:<b>350</b>");
+var grossAmount=totalBill+350;
+document.write("<br>Gross Amount Payable(After Due Date):"+"<b>"+grossAmount+"</b>");
+
+
+
+
+   </script> 
+</body>
+</html>
